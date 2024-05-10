@@ -28,13 +28,16 @@ Before you begin, ensure you have the following installed:
    ```bash
    flutter pub get
    ```
-4. Configure Sanity API Key:
+4. Set up Sanity (not included in this repository):
+
+   The Sanity backend setup is not included in this repository. You will need to set up your own Sanity project and configure it.
+5. Configure Sanity API Key:
 
    Before building the app, set your Sanity API key as an environment variable:
 
       ```bash
       export SANITY_API_KEY=your-api-key-here
-   ```
+      ```
    Replace your-api-key-here with your actual Sanity API key.
 
 ## Building the App
@@ -42,7 +45,7 @@ Before you begin, ensure you have the following installed:
 To build the Flutter app with your Sanity API key:
    ```bash
    flutter build web --dart-define=SANITY_API_KEY=$SANITY_API_KEY
-```
+   ```
 This command will build the web version of the app while passing your Sanity API key as an environment variable (SANITY_API_KEY).
 
 ## Running the App
