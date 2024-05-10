@@ -18,7 +18,7 @@ Before you begin, ensure you have the following installed:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/ttzein6/portfolio.git
+   git clone https://github.com/ttzein6/flutter-portfolio.git
    ```
 2. Navigate to the project directory:
 
