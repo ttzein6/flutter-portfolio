@@ -40,20 +40,13 @@ class HomeState extends State<Home> {
     if (scrollListener != null) _listController.addListener(scrollListener!);
 
     screens = [
-      const GreetingScreen().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
-      const ExperiencesScreen().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
-      const EducationScreen().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
-      const SkillsScreen().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
-      const Projects().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
-      Contact().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
-      const Footer().animate().fade(
-          begin: 0, end: 0.9, duration: const Duration(milliseconds: 1200)),
+      const GreetingScreen(),
+      const ExperiencesScreen(),
+      const EducationScreen(),
+      const SkillsScreen(),
+      const Projects(),
+      Contact(),
+      const Footer(),
     ];
     super.initState();
   }
@@ -111,7 +104,12 @@ class HomeState extends State<Home> {
                   width: cst.maxWidth,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: screens,
+                    children: screens
+                        .map((e) => e.animate().fade(
+                            begin: 0,
+                            end: 0.9,
+                            duration: const Duration(milliseconds: 1200)))
+                        .toList(),
                   ),
                 ),
               )
