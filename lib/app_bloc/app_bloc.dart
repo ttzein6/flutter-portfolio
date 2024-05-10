@@ -16,13 +16,12 @@ part 'app_state.dart';
 class AppBloc extends Bloc<AppEvent, AppState> {
   static const String sanityToken = String.fromEnvironment('SANITY_API_KEY');
   SanityClient sanityClient = SanityClient(
-    projectId: "v2xhcpt8",
+    projectId: "your-project-id",
     dataset: "production",
     useCdn: true,
     token: sanityToken,
   );
-  String sanityUrl =
-      "https://v2xhcpt8.apicdn.sanity.io/v2022-02-01/data/mutate/production?returnIds=true&returnDocuments=true&visibility=sync";
+  String sanityUrl = "your-sanity-url";
 
   ProfileConfig? profileConfig;
   List<Abouts>? abouts;
