@@ -9,7 +9,9 @@ This is my personal portfolio website developed using Flutter and Sanity. Feel f
 Before you begin, ensure you have the following installed:
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install)
-- Sanity CLI (Install using npm: `npm install -g @sanity/cli`)
+- (Optional) Sanity CLI (Install using npm: `npm install -g @sanity/cli`)
+
+   > This portfolio website template is designed to work with Sanity as a backend. However, you have the flexibility to configure your own backend or use static data instead
 
 ### Setup
 
