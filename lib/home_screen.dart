@@ -2,7 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sanity/flutter_sanity.dart';
+
 import 'package:portfolio/app_bloc/app_bloc.dart';
 import 'package:portfolio/home.dart';
 

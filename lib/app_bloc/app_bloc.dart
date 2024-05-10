@@ -1,4 +1,4 @@
-import 'dart:developer';
+// ignore_for_file: empty_catches
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sanity/flutter_sanity.dart';
@@ -8,7 +8,6 @@ import 'package:portfolio/models/experiences_model.dart';
 import 'package:portfolio/models/profile_config.dart';
 import 'package:portfolio/models/project_model.dart';
 import 'package:portfolio/models/skills_model.dart';
-import 'package:portfolio/tempvalues.dart';
 
 part 'app_event.dart';
 part 'app_state.dart';
@@ -34,14 +33,8 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       emit(AppLoading());
       await Future.wait([
         sanityClient.fetch('*[_type == "profileConfig"][0]').then((value) {
-          // try {
-
-          profileConfig = ProfileConfig.fromJson(value ?? profileConfigJson);
-
-          // } catch (e) {}
-        }).catchError((e) {
-          log("ERROR $e");
-        }),
+          profileConfig = ProfileConfig.fromJson(value ?? {});
+        }).catchError((e) {}),
         sanityClient
             .fetch('*[_type == "cv"][0]{"cvURL":cv.asset->url}')
             .then((value) {
@@ -57,28 +50,28 @@ class AppBloc extends Bloc<AppEvent, AppState> {
           } catch (e) {}
         }),
         sanityClient.fetch('*[_type == "abouts"]').then((v) {
-          var value = v ?? aboutsJson;
+          var value = v ?? {};
           try {
             abouts = List.generate(value.length,
                 (index) => Abouts.fromJson(value.elementAt(index)));
           } catch (e) {}
         }),
         sanityClient.fetch('*[_type == "works"]').then((v) {
-          var value = v ?? worksJson;
+          var value = v ?? {};
           try {
             projects = List.generate(value.length,
                 (index) => Project.fromJson(value.elementAt(index)));
           } catch (e) {}
         }),
         sanityClient.fetch('*[_type == "experiences"]').then((v) {
-          var value = v ?? experiencesJson;
+          var value = v ?? {};
           try {
             experiences = List.generate(value.length,
                 (index) => Experiences.fromJson(value.elementAt(index)));
           } catch (e) {}
         }),
         sanityClient.fetch('*[_type == "skills"]').then((v) {
-          var value = v ?? skillsJson;
+          var value = v ?? {};
           try {
             skills = List.generate(value.length,
                 (index) => Skills.fromJson(value.elementAt(index)));

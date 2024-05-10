@@ -15,9 +15,9 @@ class Projects extends StatelessWidget {
         state as AppLoaded;
         ExpansionPanel(
           headerBuilder: (_, i) {
-            return SizedBox();
+            return const SizedBox();
           },
-          body: SizedBox(),
+          body: const SizedBox(),
         );
         return Container(
           constraints: const BoxConstraints(maxWidth: 700, minWidth: 400),
